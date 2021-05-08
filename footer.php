@@ -10,22 +10,62 @@
  */
 
 ?>
-
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'starter' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'starter' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'starter' ), 'starter', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	<footer class="site-footer">
+		<div class="container">
+			<div class="wp-block-columns">
+				<div class="wp-block-column" style="flex-basis:20%">
+					<h5 class="menu-title"><?php esc_html_e( 'Menu Title', 'starter' ); ?></h5>
+					<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'footer-1',
+							)
+						);
+					?>
+				</div>
+				<div class="wp-block-column" style="flex-basis:20%">
+					<h5 class="menu-title"><?php esc_html_e( 'Menu Title', 'starter' ); ?></h5>
+					<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'footer-2',
+							)
+						);
+					?>
+				</div>
+				<div class="wp-block-column" style="flex-basis:20%">
+					<h5 class="menu-title"><?php esc_html_e( 'Menu Title', 'starter' ); ?></h5>
+					<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'footer-3',
+							)
+						);
+					?>
+				</div>
+				<div class="wp-block-column" style="flex-basis:20%">
+					<h5 class="menu-title"><?php esc_html_e( 'Menu Title', 'starter' ); ?></h5>
+					<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'footer-4',
+							)
+						);
+					?>
+				</div>
+				<div class="wp-block-column" style="flex-basis:20%">
+					<h5 class="menu-title"><?php esc_html_e( 'Menu Title', 'starter' ); ?></h5>
+					<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'footer-5',
+							)
+						);
+					?>
+				</div>
+			</div>
+		</div>
+	</footer>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
