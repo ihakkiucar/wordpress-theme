@@ -17,6 +17,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
+	<link rel="dns-prefetch" href="//ajax.googleapis.com"/>
+	<link rel="dns-prefetch" href="//connect.facebook.net"/>
+	<link rel="dns-prefetch" href="//px.ads.linkedin.com"/>
+	<link rel="dns-prefetch" href="//www.google-analytics.com"/>
+	<link rel="dns-prefetch" href="//www.googletagmanager.com"/>
+
 	<?php wp_head(); ?>
 </head>
 
@@ -26,34 +32,24 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'starter' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$starter_description = get_bloginfo( 'description', 'display' );
-			if ( $starter_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $starter_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+		<div class="container">
+			
+			<nav id="site-navigation" class="main-navigation">
+			<h1 class="logo">
+				<a href="<?php echo get_home_url(); ?>" title="Homepage">
+					<img width="1" src="<?php echo get_stylesheet_directory_uri();?>/assets/logo.png" alt="Logo">
+				</a>	
+			</h1>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" onclick="menuToggle(this)"><div class="menu-bar1"></div><div class="menu-bar2"></div><div class="menu-bar3"></div></button>
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'starter' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
+				<?php
+				wp_nav_menu(
+					array(
+						'theme_location' => 'header',
+					)
+				);
+				?>
+			</nav><!-- #site-navigation -->
+		</div><!-- .container -->
 	</header><!-- #masthead -->
+	
