@@ -183,3 +183,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/* Deregister wp-embed */
+function my_deregister_scripts(){
+	wp_deregister_script( 'wp-embed' );
+  }
+  add_action( 'wp_footer', 'my_deregister_scripts' );
