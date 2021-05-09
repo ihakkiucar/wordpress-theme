@@ -95,6 +95,26 @@
 			</div><!-- .entry-meta -->
 			<?php
 				if ( is_single() ) :?>
+			<div class="blog-share">
+				<div class="blog-share__box">
+					<a class="blog-share__link" href="https://twitter.com/intent/tweet?text=<?php esc_url( the_title())?>&url=<?php esc_url( the_permalink())?>" title="Share on Twitter" target="_blank">
+						<img class="blog-share__icon" src="<?php echo get_stylesheet_directory_uri();?>/assets/twitter.png" alt="twitter">	
+						<span></span>
+					</a>
+				</div>
+				<div class="blog-share__box">
+					<a class="blog-share__link" href="https://www.facebook.com/sharer/sharer.php?u=<?php esc_url( the_permalink())?>" title="Share on Facebook" target="_blank">
+						<img class="blog-share__icon" src="<?php echo get_stylesheet_directory_uri();?>/assets/facebook.png" alt="facebook" >	
+						<span></span>
+					</a>
+				</div>
+				<div class="blog-share__box">
+					<a class="blog-share__link" href="https://www.linkedin.com/shareArticle?mini=true&url=<?php esc_url( the_permalink())?>" title="Share on LinkedIn" target="_blank">
+						<img class="blog-share__icon" src="<?php echo get_stylesheet_directory_uri();?>/assets/linkedin.png" alt="linkedin">
+						<span></span>
+					</a>
+				</div>
+			</div>
 			<div class="blog-navigation">
 				<div class="blog-navigation__button">
 					<?php previous_post_link( $format = '%link', $link = 'Previous Post' ); ?> 
