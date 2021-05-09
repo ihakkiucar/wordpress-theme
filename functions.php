@@ -220,3 +220,13 @@ function include_custom_jquery() {
 add_action('wp_enqueue_scripts', 'include_custom_jquery');
 // include slick
 wp_enqueue_script( 'slick', get_stylesheet_directory_uri() . '/js/slick.js', array ( 'jquery' ), null, true);
+
+/* Disable image sizes */
+
+add_filter( 'intermediate_image_sizes', function( $sizes )
+{
+    return array_filter( $sizes, function( $val )
+    {
+        return 'medium_large' !== $val; // Filter out 'medium_large'
+    } );
+} );
