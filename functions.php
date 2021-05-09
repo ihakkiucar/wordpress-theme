@@ -209,3 +209,14 @@ add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 /* Remove emoji support */
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 remove_action( 'wp_print_styles', 'print_emoji_styles' );
+
+// include custom jQuery
+function include_custom_jquery() {
+
+	wp_deregister_script('jquery');
+	wp_enqueue_script('jquery', get_stylesheet_directory_uri() . '/js/jquery.js', array(), null, true);
+
+}
+add_action('wp_enqueue_scripts', 'include_custom_jquery');
+// include slick
+wp_enqueue_script( 'slick', get_stylesheet_directory_uri() . '/js/slick.js', array ( 'jquery' ), null, true);
