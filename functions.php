@@ -50,7 +50,12 @@ if ( ! function_exists( 'starter_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'menu-1' => esc_html__( 'Primary', 'starter' ),
+				'header' => esc_html__( 'Header', 'starter' ),
+				'footer-1' => esc_html__( 'Footer Menu 1', 'starter' ),
+				'footer-2' => esc_html__( 'Footer Menu 2', 'starter' ),
+				'footer-3' => esc_html__( 'Footer Menu 3', 'starter' ),
+				'footer-4' => esc_html__( 'Footer Menu 4', 'starter' ),
+				'footer-5' => esc_html__( 'Footer Menu 5', 'starter' ),
 			)
 		);
 
