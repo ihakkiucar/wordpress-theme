@@ -23,6 +23,9 @@
 	<link rel="dns-prefetch" href="//www.google-analytics.com"/>
 	<link rel="dns-prefetch" href="//www.googletagmanager.com"/>
 
+	<link rel="preload" as="font" href="/wp-content/themes/starter/fonts/merriweather-v22-latin-regular.woff2" type="font/woff2" crossorigin="anonymous">
+	<link rel="preload" as="font" href="/wp-content/themes/starter/fonts/merriweather-v22-latin-700.woff2" type="font/woff2" crossorigin="anonymous">
+
 	<?php wp_head(); ?>
 </head>
 
