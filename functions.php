@@ -243,3 +243,7 @@ function rjs_lwp_contactform_css_js() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'rjs_lwp_contactform_css_js');
+
+// general.js
+
+wp_enqueue_script('general', get_stylesheet_directory_uri() . '/js/general.js', array(), null, true);

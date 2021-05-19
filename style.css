@@ -976,13 +976,129 @@ textarea {
 	src: url('/wp-content/themes/starter/fonts/merriweather-v22-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
 		 url('/wp-content/themes/starter/fonts/merriweather-v22-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 	font-display: block;
-  }
-  /* merriweather-700 - latin */
-  @font-face {
+}
+/* merriweather-700 - latin */
+@font-face {
 	font-family: 'Merriweather';
 	font-style: normal;
 	font-weight: 700;
 	src: url('/wp-content/themes/starter/fonts/merriweather-v22-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
 		 url('/wp-content/themes/starter/fonts/merriweather-v22-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 	font-display: block;
-  }
+}
+
+.container {
+	max-width: 1170px;
+	padding-right: 20px;
+	padding-left: 20px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.dbi {
+	display:block!important;
+}
+
+.hide {
+	display: none!important;
+}
+
+/* Menu */
+
+.main-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.main-navigation li {
+    display: inline;
+}
+
+.main-navigation a {
+	display: inline-block;
+	font-weight: 600;
+	font-size: 14px;
+	color: #3a3a3a;
+    padding: 0 10px;
+	text-decoration: none;
+}
+
+.main-navigation a:hover {
+	color: red;
+}
+
+.menu-item-has-children > a:after {
+	content: "\25be";
+	margin-left: 2px;
+	position: relative;
+	top: 1px;
+}
+
+ul.sub-menu {
+    flex-direction: column;
+    background-color: #fff;
+}
+
+ul.sub-menu a{    
+    text-align: left;
+    padding: 10px 10px;
+    line-height: 1.5;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.menu-toggle {
+	display: none; 
+}
+
+@media (max-width:576px){
+
+    .menu-toggle {
+        display: block;
+		background: none;
+		border: none;
+		outline:none;
+		padding: 0;
+		margin-top: -12px;
+    }
+
+	.menu-bar1, .menu-bar2, .menu-bar3 {
+		width: 26px;
+		height: 4px;
+		background-color: #231f20;
+		margin: 4px 0;
+		transition: 0.4s;
+		border-radius: 10px;
+	}
+	
+	.change .menu-bar1 {
+		-webkit-transform: rotate(-45deg) translate(-9px, 6px);
+		transform: rotate(-45deg) translate(-9px, 6px);
+	}
+	
+	.change .menu-bar2 {
+		opacity: 0;
+	}
+	
+	.change .menu-bar3 {
+		-webkit-transform: rotate(45deg) translate(-5px, -3px);
+		transform: rotate(45deg) translate(-5px, -3px);
+	}
+
+    .menu-main-container {
+        display: none;
+		width: 100%;
+    }
+
+	#menu-main {
+		display: flex;
+		flex-direction: column;
+	}
+
+	li.menu-item {
+		padding: 15px 0;
+	}
+
+}
